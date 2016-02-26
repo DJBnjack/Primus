@@ -24,6 +24,7 @@ primus.on('connection', function connection(spark) {
   });
 });
 
-server.listen(8080, function () {
-  console.log('Open http://localhost:8080 in your browser');
+var port = process.env.PORT || 1337;
+server.listen(port, function () {
+  console.log('Server running');
 });
