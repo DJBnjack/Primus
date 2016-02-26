@@ -18,6 +18,7 @@ var Primus = require('primus')
 // Listen for connections and echo the events send.
 //
 primus.on('connection', function connection(spark) {
+  primus.write(spark.id + ' connected.');
   spark.on('data', function received(data) {
     console.log(spark.id, 'received message:', data);
     primus.write(data);
